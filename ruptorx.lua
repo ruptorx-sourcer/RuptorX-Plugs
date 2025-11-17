@@ -1839,3 +1839,4 @@ function Interpreter.init()
 end
 
 -- RUPTORX_PLUGIN_MARKER_DO_NOT_MODIFY --
+return Interpreter
