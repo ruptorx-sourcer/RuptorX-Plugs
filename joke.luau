@@ -1,7 +1,3 @@
--- Plugins just call register() directly
-register("joke", function(flags))
-    local message = table.concat(flags, " ")
-    print("JOKE: " .. message)
+Interpreter.register("joke", function(flags)
+    print("JOKE: " .. table.concat(flags, " "))
 end)
-
-print("Joke plugin loaded successfully!")
