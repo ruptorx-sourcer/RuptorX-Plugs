@@ -1,11 +1,15 @@
--- RuptorX Joke Plugin
-local success = ruptorx.register("joke", function(flags)
+-- RuptorX TestCmd Plugin
+-- This is a test plugin to verify the plugin system works
+
+local success = ruptorx.register("testcmd", function(flags)
     local message = table.concat(flags, " ")
-    print("JOKE: " .. message)
+    print("TESTCMD: Plugin system working! Message: " .. message)
 end)
 
 if success then
-    print("JOKE PLUGIN: Successfully loaded! Use *joke <message>")
+    print("TESTCMD PLUGIN: Successfully loaded! Use *testcmd <message>")
 else
-    warn("JOKE PLUGIN: Failed to register command")
+    warn("TESTCMD PLUGIN: Failed to register command")
 end
+
+return "TestCmd plugin loaded successfully"
