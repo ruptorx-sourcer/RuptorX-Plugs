@@ -1,9 +1,15 @@
--- Example RuptorX Plugin
+-- Example RuptorX Plugin (FIXED Version)
 register("example")
 
 -- Plugin code here
 print("Example plugin loaded!")
-print("Flags received:", table.concat(flags, ", "))
+
+-- SAFE: Check if flags exists before using it
+if flags and type(flags) == "table" then
+    print("Flags received:", table.concat(flags, ", "))
+else
+    print("No flags received or flags is not a table")
+end
 
 -- Access RootKit API
 if ismobile() then
@@ -13,7 +19,7 @@ else
 end
 
 -- Do plugin work here
-for i = 1, 5 do
+for i = 1, 3 do
     print("Plugin working... " .. i)
     wait(1)
     
@@ -25,3 +31,4 @@ end
 
 -- Always end with functionend
 functionend()
+print("Example plugin finished!")
